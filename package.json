@@ -1,5 +1,6 @@
 {
   "name": "inventoryservice",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -18,6 +19,8 @@
   "homepage": "https://github.com/nathalies-prog/InventoryService#readme",
   "description": "",
   "dependencies": {
+    "@faker-js/faker": "^9.5.1",
+    "pg": "^8.13.3",
     "typescript": "^5.8.2"
   }
 }
