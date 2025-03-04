@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import { BookStorageRepository } from "../repositories/BookStorage-Repository";
 import { BookSource } from "../datasources/BookSource";
 import { BookInteractor } from "../interactors/Book-Interactor";
-import { serve } from "@hono/node-server/.";
+import { serve } from "@hono/node-server";
 
 const bookAdapter = new Hono();
 const storageRepository: BookStorageRepository = new BookSource();
@@ -14,7 +14,7 @@ bookAdapter.get("/book/:isbn", async (c) => {
   return c.json({ data: account }, 200);
 });
 
-bookAdapter.get("/accounts", async (c) => {
+bookAdapter.get("/books", async (c) => {
   const accounts = await bookInteractor.all();
   return c.json({ data: accounts }, 200);
 });
